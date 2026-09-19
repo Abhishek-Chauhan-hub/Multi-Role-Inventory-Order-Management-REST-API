@@ -69,6 +69,19 @@ Order status can be:
 * shipped
 * delivered
 * cancelled
+  
+## Low Stock Products
+
+An Admin-only API is available to view products with low stock.
+
+```text
+GET /api/products/low-stock
+```
+
+This API returns products whose available stock is less than **5**.
+
+This endpoint can only be accessed by Admin users.
+
 
 ## Technologies Used
 
