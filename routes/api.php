@@ -16,6 +16,9 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
 
+
+    Route::get('/products/low-stock', [ProductController::class, 'lowStock']);
+
     Route::apiResource('products', ProductController::class);
 
     Route::get('/admin/orders', [OrderController::class, 'allOrders']);

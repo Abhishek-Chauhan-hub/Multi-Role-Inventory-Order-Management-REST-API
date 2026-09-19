@@ -93,4 +93,13 @@ class ProductController extends Controller
             'message' => 'Product deleted successfully'
         ]);
     }
+        public function lowStock()
+    {
+        $products = Product::where('stock_quantity', '<', 5)->get();
+
+        return response()->json([
+            'message' => 'Low stock products',
+            'products' => $products
+        ]);
+    }
 }
